@@ -8,6 +8,6 @@ mongoose.connect(MONGO_URL,{
 .then(() => {
     console.log('connected to database');
 })
-.catch(()=>{
+.catch((err)=>{
     console.log('cannot connect to db'+ err);
 });
