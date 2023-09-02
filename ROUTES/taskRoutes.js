@@ -22,8 +22,19 @@ router.post('/createtask',auth, async(req,res) => {
         res.status(400).send({error:err});
     }
 })
-//read task
-
+//read/get task
+router.get('/',auth, async(req,res)=>{
+    try{
+        const task = await Task.find({
+            owner : req.user._id
+        })
+        res.send(200).json({task,message:"got the task successfully"})
+    }
+    catch(err)
+    {
+        res.status(500).send({error:err});
+    }
+})
 
 //update task
 

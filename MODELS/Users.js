@@ -6,6 +6,8 @@ const userSchema = new mongoose.Schema({
     name : { type:String,required:true },
     email : { type:String,required:true, unique:true },
     password : {type:String,required:true}
+},{
+    timestamps : true
 })
 
 // .pre is the method to change the values before saving to the database
